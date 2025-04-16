@@ -1,0 +1,31 @@
+.login-container {
+  background-color: #a6dbe1;
+}
+
+.login-box {
+  max-width: 450px;
+  width: 100%;
+  height: 500px;
+}
+
+.btn-maroon {
+  background-color: #880e2d;
+  color: white;
+}
+
+.btn-maroon:hover {
+  background-color: #6d0b24;
+}
+
+.text-maroon {
+  color: #880e2d;
+}
+
+.text-maroon:hover {
+  text-decoration: underline;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}

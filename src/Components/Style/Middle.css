@@ -1,0 +1,125 @@
+.how-it-works-section {
+  background-color: #a6dde1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.icon-wrapper {
+  background-color: #d0ecef;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-maroon {
+  color: #800020;
+}
+
+.btn-maroon {
+  background-color: #800020;
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn-maroon:hover {
+  background-color: #800020;
+  color: #fff;
+}
+
+.placeholder-image {
+  height: 200px;
+  background-color: #f0f0f0;
+  background-image: url('src/assets/wedding.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.upcoming-section {
+  background-color: #b0e0e6; /* soft cyan-blue */
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-maroon {
+  color: #800020;
+}
+
+.btn-maroon {
+  background-color: #800020;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.btn-maroon:hover {
+  background-color: #800020;
+}
+
+.event-card {
+  min-height: 180px;
+}
+
+.event-image {
+  width: 35%;
+  background-color: #e0e0e0;
+  background-image: url('src/assets/event.jpg');
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+
+.testimonials-section {
+  background-color: #ffffff;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-card {
+  background-color: #f0fafa;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ddd;
+  background-image: url('src/assets/potrait1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.cta-section {
+  background-color: #800020;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.cta-input {
+  max-width: 250px;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border: none;
+}

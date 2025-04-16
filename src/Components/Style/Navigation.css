@@ -1,0 +1,39 @@
+
+.navbar {
+   background-color: #fff8f8; 
+  }
+
+ 
+  .logo{
+    height:12%;
+    width: 12%;
+  }
+  .item{
+    margin-right: 400px;
+    
+  }
+  .header{
+    gap: 20px; 
+  }
+  .home1{
+    font-weight: 700;
+  }
+  .navbar-brand{
+    color: #800020
+  }
+  .home1{
+    color: #800020;
+    font-weight: 400;
+  }
+.signbtn{
+  background-color: #FFD700;
+}  
+.signbtn:hover{
+  background-color: #ffc400;
+}
+.loginbtn{
+  background-color: #FFD700;
+}
+.loginbtn:hover{
+  background-color: #FFc400;
+}

@@ -1,0 +1,69 @@
+/* Background Color */
+.portfolio-background {
+    background-color: #b0e0e6;
+    /* background-image: url('src/assets/loginback.png'); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Form Container */
+  .portfolio-form {
+    background-color: white;
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border:lightgray;
+  }
+  
+  /* Image Upload Box */
+  .image-upload-box {
+    border: 2px dashed #800020;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+  }
+  
+  .browse-link {
+    color: #800020;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Tags */
+  .tag-badge {
+    background-color: #800020;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 3px;
+    display: inline-block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .portfolio-form {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  /* Availability Dates Picker */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .react-datepicker-wrapper {
+    width: auto;
+  }
+}

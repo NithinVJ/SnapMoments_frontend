@@ -1,0 +1,87 @@
+/* events.css */
+
+.events-section {
+  background-color: #b0e0e6; /* Light teal */
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+.events-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.events-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+}
+
+.filters-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.event-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.event-image-placeholder {
+  background-color: #e9ecef;
+  min-width: 180px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-details {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.event-price {
+  font-weight: bold;
+  color: #800020; /* Maroon */
+}
+
+.book-btn {
+  background-color: #800020;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.book-btn:hover {
+  background-color: #660019;
+}
+
+.pagination .page-link {
+  color: #800020;
+  font-weight: 500;
+  border: none;
+}
+
+.pagination .active .page-link {
+  background-color: #800020;
+  color: white;
+  border-radius: 0.4rem;
+}
