@@ -1,6 +1,6 @@
 
 .navbar {
-   background-color: #fff8f8; 
+   background-color: #f3fcff; 
   }
 
  
@@ -36,4 +36,23 @@
 }
 .loginbtn:hover{
   background-color: #FFc400;
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #800020; /* Burgundy color */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.avatar-circle:hover {
+  background-color: #600018; /* Darker burgundy on hover */
+  transform: scale(1.05);
 }

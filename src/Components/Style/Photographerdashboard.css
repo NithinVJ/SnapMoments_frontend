@@ -1,0 +1,174 @@
+.photographer-dashboard {
+  min-height: 100vh;
+  background-color: #98cbfd;
+  position: relative;
+  z-index: auto;
+}
+
+/* Custom colors */
+.text-custom-burgundy {
+  color: #800020;
+}
+
+.bg-custom-burgundy {
+  background-color: #800020;
+  color: white;
+}
+
+.bg-custom-burgundy:hover {
+  background-color: #600010;
+  color: white;
+}
+
+.bg-custom-lightblue-10 {
+  background-color: rgba(161, 214, 226, 0.1);
+}
+
+/* Badge variants */
+.badge.bg-success-light {
+  background-color: rgba(25, 135, 84, 0.1);
+  color: #198754;
+}
+
+.badge.bg-warning-light {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.badge.bg-secondary-light {
+  background-color: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+}
+
+/* Hover effects */
+.hover-bg-gray:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hover-text-white:hover {
+  color: white;
+}
+
+/* Custom button styles */
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  color: white;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Card styles */
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  position: relative;
+  z-index: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .photographer-dashboard .card-body {
+    padding: 1rem;
+  }
+  
+  .photographer-dashboard .col-md-3, 
+  .photographer-dashboard .col-md-9 {
+    width: 100%;
+  }
+}
+
+
+.photographer-header {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+
+.photographer-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.photographer-info {
+  flex: 1;
+}
+
+.photographer-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #6A4C93;
+  font-weight: 600;
+}
+
+.star-icon {
+  margin-right: 5px;
+  color: #FFD166;
+}
+
+.specialty {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.location-icon {
+  margin-right: 5px;
+  color: #06AED5;
+}
+
+.Bio{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tag {
+  background-color: #71dff8;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #020202;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.notification-dropdown {
+  z-index: 1050 !important; /* Higher than Bootstrap's modal z-index (1040) */
+}
+
+/* Ensure other elements don't interfere */

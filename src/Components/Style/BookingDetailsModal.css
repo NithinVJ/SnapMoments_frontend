@@ -1,0 +1,55 @@
+/* BookingDetailsModal.css */
+
+/* Modal styling */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .modal-title {
+    font-weight: 600;
+  }
+  
+  /* Detail items */
+  .icon-container {
+    width: 32px;
+    height: 32px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  .btn-light {
+    border: 1px solid #dee2e6;
+  }
+  
+  /* Status badges */
+  .badge-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .badge-warning {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .badge-primary {
+    background-color: #cce5ff;
+    color: #004085;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .modal-dialog {
+      margin: 10px;
+    }
+  }

@@ -8,7 +8,7 @@ import Middle from './Middle'
 function HomePage() {
   return (
     <div>
-        <Navigation />
+        
         <FirstPage />
         <Middle />
         <Footer />

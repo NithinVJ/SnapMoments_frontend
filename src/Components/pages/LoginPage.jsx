@@ -16,12 +16,30 @@ function LoginPage() {
       const response = await axios.post("http://localhost:8080/Photobooking/login", {
         email: email,
         password: password,
-      });
-
-      if (response.status === 200) {
+      })
+      .then(response=>{
+        console.log(response.data)
         alert("Login Successful!");
-        navigate("/portfolio");
-      }
+        if(response.data.accountType==="photographer"){
+        
+        const dummyToken = "user_" + new Date().getTime();
+        localStorage.setItem("authToken",dummyToken);
+        localStorage.setItem('photographerId', response.data.id);
+        localStorage.setItem('photographerEmail', response.data.email);
+        localStorage.setItem('photographerName', response.data.firstName+response.data.lastName);
+        navigate("/photodashboard");
+        }
+        else{
+          
+        const dummyToken = "user_" + new Date().getTime();
+        localStorage.setItem("authToken",dummyToken);
+        localStorage.setItem('userId', response.data.id);
+        localStorage.setItem('userEmail', response.data.email);
+        localStorage.setItem('userName', response.data.firstName+response.data.lastName)
+        navigate("/");
+        }
+      })
+
     } catch (error) {
       if (error.response) {
         setErrorMessage(error.response.data.message || "Login failed");
@@ -32,7 +50,6 @@ function LoginPage() {
   };
 
   return (
-    
     <div className="login-container d-flex justify-content-center align-items-center vh-100">
       <div className="login-box p-4 shadow rounded-4 bg-white">
         <h2 className="text-center fw-bold">Welcome Back</h2>

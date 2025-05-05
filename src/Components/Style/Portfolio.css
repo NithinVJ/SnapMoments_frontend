@@ -1,7 +1,6 @@
-/* Background Color */
+
 .portfolio-background {
     background-color: #b0e0e6;
-    /* background-image: url('src/assets/loginback.png'); */
     background-repeat: no-repeat;
     background-size:cover;
     font-family: 'Poppins', sans-serif;
@@ -13,7 +12,6 @@
     padding: 20px;
   }
   
-  /* Form Container */
   .portfolio-form {
     background-color: white;
     max-width: 800px;
@@ -24,7 +22,6 @@
     border:lightgray;
   }
   
-  /* Image Upload Box */
   .image-upload-box {
     border: 2px dashed #800020;
     text-align: center;
@@ -39,7 +36,6 @@
     font-weight: bold;
   }
   
-  /* Tags */
   .tag-badge {
     background-color: #800020;
     color: white;
@@ -49,7 +45,6 @@
     display: inline-block;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .portfolio-form {
       max-width: 100%;
@@ -57,7 +52,6 @@
     }
   }
   
-  /* Availability Dates Picker */
 .react-datepicker-wrapper {
   width: 100%;
 }

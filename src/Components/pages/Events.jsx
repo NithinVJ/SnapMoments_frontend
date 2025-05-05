@@ -68,7 +68,7 @@ const Events = () => {
 
   return (
     <>
-    <Navigation />
+    
     <div className="events-page">
       <div className="text-center py-5">
         <h2 className="fw-bold">Upcoming Events</h2>

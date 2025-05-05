@@ -1,0 +1,70 @@
+/* Custom Colors */
+:root {
+    --custom-burgundy: #800020;
+    --custom-burgundy-dark: #600010;
+    --custom-lightblue: #a1d6e2;
+  }
+  
+  .bg-custom-lightblue {
+    background-color: var(--custom-lightblue);
+  }
+  
+  .text-custom-burgundy {
+    color: var(--custom-burgundy);
+  }
+  
+  .hover-custom-burgundy:hover {
+    color: var(--custom-burgundy);
+  }
+  
+  .btn-custom-burgundy {
+    background-color: var(--custom-burgundy);
+    border-color: var(--custom-burgundy);
+    color: white;
+  }
+  
+  .btn-custom-burgundy:hover {
+    background-color: var(--custom-burgundy-dark);
+    border-color: var(--custom-burgundy-dark);
+    color: white;
+  }
+  
+  .btn-outline-custom-burgundy {
+    color: var(--custom-burgundy);
+    border-color: var(--custom-burgundy);
+  }
+  
+  .btn-outline-custom-burgundy:hover {
+    background-color: var(--custom-burgundy);
+    color: white;
+  }
+  
+  /* Section Padding */
+  section {
+    padding: 4rem 0;
+  }
+  
+  /* Card Styling */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    section {
+      padding: 2rem 0;
+    }
+    
+    .display-4 {
+      font-size: 2.5rem;
+    }
+    
+    .lead {
+      font-size: 1rem;
+    }
+  }

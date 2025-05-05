@@ -1,0 +1,55 @@
+.sticky-summary {
+    position: sticky;
+    top: 1rem;
+    
+    
+  }
+  .booking-summary-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  .booking-summary-card {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-left: 2px solid teal;
+    transition: 0.3s ease;
+  }
+  
+  .booking-summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bg-light-purple {
+    background-color: #f3e8ff;
+  }
+  
+  .bg-light-blue {
+    background-color: #e0f7fa;
+  }
+  
+  .bg-light-green {
+    background-color: #e8f5e9;
+  }
+  
+  .bg-light-yellow {
+    background-color: #fff9c4;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #0f9b8e, #14b8a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
