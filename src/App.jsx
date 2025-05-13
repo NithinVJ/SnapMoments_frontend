@@ -18,6 +18,7 @@ import Navigation from './Components/pages/Navigation';
 import PrivateRoute from './Components/pages/PrivateRoute';
 import About from './Components/pages/About';
 import PortfolioEditModal from './Components/pages/PortfolioEditModal';
+import PaymentPage from './Components/pages/PaymentPage';
 
 
 
@@ -25,7 +26,7 @@ import PortfolioEditModal from './Components/pages/PortfolioEditModal';
 function App() {
   const isAuthenticated = !!localStorage.getItem("authToken");
   const location = useLocation();
-  const hideNavbarRoutes = ["/login", "/signup","/dashboard","/photodashboard","/portfolio"];
+  const hideNavbarRoutes = ["/login", "/signup","/dashboard","/photodashboard","/portfolio","/dashboard/payment/:bookingId"];
   const isNavbarVisible = !hideNavbarRoutes.includes(location.pathname);
   
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path='/photodashboard'element={<PhotographerDashboard />}></Route>
         <Route path='/about'element={<About />}></Route>
         <Route path="/portfolio/edit/:id" element={<PortfolioEditModal />} />
+        <Route path="/dashboard/payment/:bookingId" element={<PaymentPage />} />
       </Routes>
       </>
   )

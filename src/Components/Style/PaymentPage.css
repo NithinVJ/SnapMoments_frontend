@@ -1,0 +1,96 @@
+/* PaymentPage.css */
+
+.payment-page-container {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .payment-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .text-custom-burgundy {
+    color: #7c1d1d;
+  }
+  
+  .bg-custom-burgundy {
+    background-color: #7c1d1d !important;
+  }
+  
+  .payment-options .form-check {
+    margin-bottom: 10px;
+  }
+  
+  .payment-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #fff;
+  }
+  
+  .payment-success-card {
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .payment-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .payment-loading-box {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .payment-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .progress-step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+  }
+  .progress-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: #ddd;
+    z-index: -1;
+  }
+  .progress-step.active::after {
+    background: var(--custom-burgundy);
+  }
+  .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ddd;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .progress-step.active .step-number {
+    background: var(--custom-burgundy);
+    color: white;
+  }
+  

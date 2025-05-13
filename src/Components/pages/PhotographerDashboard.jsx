@@ -61,7 +61,8 @@ export default function PhotographerDashboard() {
 
   const formatBooking = (booking) => {
     return {
-      id: booking.bookingCode,
+      id: booking.id, // Changed from bookingCode to id as primary identifier
+      bookingCode: booking.bookingCode,
       event: booking.eventType,
       client: booking.fullName || `${booking.user?.firstName} ${booking.user?.lastName}`,
       clientImage: "/placeholder.svg?height=50&width=50&text=" +
@@ -214,10 +215,20 @@ export default function PhotographerDashboard() {
           }
         }
       );
-
-      setUpcomingBookings(upcomingBookings.filter(booking => booking.id !== bookingId));
+  
+      // Update state based on active tab
+      if (activeTab === 'upcoming') {
+        setUpcomingBookings(upcomingBookings.filter(booking => booking.id !== bookingId));
+      } else if (activeTab === 'pending') {
+        setUpcomingBookings(upcomingBookings.filter(booking => booking.id !== bookingId));
+      }
+      
+      // Optionally show success message
+      alert('Booking declined successfully');
     } catch (err) {
+      console.error('Error declining booking:', err);
       setError(err.response?.data?.message || err.message);
+      alert('Failed to decline booking: ' + (err.response?.data?.message || err.message));
     }
   };
 
@@ -513,7 +524,7 @@ export default function PhotographerDashboard() {
                             <span className="badge bg-success-light text-success">
                               Confirmed
                             </span>
-                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.id}</p>
+                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.bookingCode}</p>
                           </div>
                           <div className="mt-3 mt-md-0">
                             <h4 className="fw-bold text-custom-burgundy">{booking.price}</h4>
@@ -550,7 +561,7 @@ export default function PhotographerDashboard() {
                             <div className="d-flex flex-column gap-2">
                               <button
                                 className="btn btn-outline-secondary"
-                                onClick={() => handleMessageClient(booking.clientDetails, booking.id)}
+                                onClick={() => handleMessageClient(booking.clientDetails, booking.bookingCode)}
                               >
                                 <MessageSquare size={16} className="me-2" />
                                 Message Client
@@ -603,7 +614,7 @@ export default function PhotographerDashboard() {
                             <span className="badge bg-warning-light text-warning">
                               Pending
                             </span>
-                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.id}</p>
+                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.bookingCode}</p>
                           </div>
                           <div className="mt-3 mt-md-0">
                             <h4 className="fw-bold text-custom-burgundy">{booking.price}</h4>
@@ -659,8 +670,9 @@ export default function PhotographerDashboard() {
                                 onClick={() => handleDeclineBooking(booking.id)}
                               >
                                 <XCircle size={16} className="me-2" />
-                                Decline Booking
+                                Cancel Booking
                               </button>
+                            
                             </div>
                           </div>
                         </div>
@@ -691,7 +703,7 @@ export default function PhotographerDashboard() {
                             <span className="badge bg-secondary-light text-secondary">
                               Completed
                             </span>
-                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.id}</p>
+                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.bookingCode}</p>
                           </div>
                           <div className="mt-3 mt-md-0">
                             <h4 className="fw-bold text-custom-burgundy">{booking.price}</h4>

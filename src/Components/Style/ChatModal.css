@@ -1,18 +1,28 @@
-.chat-messages {
-    scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
-  }
-  
-  .chat-messages::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .chat-messages::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 10px;
-  }
-  
-  .bg-light {
-    background-color: #f8f9fa !important;
-  }
-  
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  position: relative;
+  word-wrap: break-word;
+  background-color: #f1f1f1;
+}
+
+.chat-bubble.current-user {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-top-right-radius: 0;
+  align-self: flex-end;
+}
+
+.chat-bubble.other-user {
+  background-color: #f8d7da;
+  color: #842029;
+  border-top-left-radius: 0;
+  align-self: flex-start;
+}
+
+.chat-meta {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 5px;
+}

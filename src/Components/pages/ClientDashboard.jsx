@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import {  Button } from 'react-bootstrap';
 import {
   Camera, Calendar, Clock, MapPin, User,
   CreditCard, MessageSquare, FileText, Search,
-  Bell, ChevronRight, Star, Download, Filter
+  Bell, ChevronRight, Star, Download, Filter,
+  ArrowLeft
 } from 'react-feather';
 import '../Style/ClientDashboard.css';
 import BookingDetailsModal from '../pages/ClientBookingDetailsModal';
@@ -92,22 +94,33 @@ export default function ClientDashboard() {
     setShowDetailsModal(true);
   };
 
-  const handleMessagePhotographer = (booking) => {
-    const photographerDetails = booking.photographerDetails;
+  const handleMessagePhotographer = (photographerDetails, booking,bookingId) => {
+   
     setPhotographer({
       token: "photog_" + photographerDetails.id,
       name: photographerDetails.fullName || photographerDetails.name,
       role: "PHOTOGRAPHER"
     });
     setCurrentBooking(booking); // store the full booking object
-    setCurrentBookingId(booking.id); // optional
+    setCurrentBookingId(bookingId); // optional
     setShowChat(true);
   };
 
 
+  const handlePaymentClick = (booking, paymentType) => {
+    // Navigate to payment page with booking details and payment type
+    navigate(`/dashboard/payment/${booking.id}`, {
+      state: {
+        
+        paymentType // 'advance' or 'remaining'
+      }
+    });
+  };
+
   const formatBooking = (booking, isPast = false) => {
     const formatted = {
-      id: booking.bookingCode,
+      id: booking.id,
+      bookingCode:booking.bookingCode,
       event: booking.eventType,
       photographer: booking.photographer.fullName,
       photographerImage: booking.photographer.imageUrls?.[0] || "/src/assets/potrait1.jpg",
@@ -167,6 +180,7 @@ export default function ClientDashboard() {
   return (
     <div className="min-vh-100 bg-custom-lightblue">
       <header className="bg-white shadow-sm">
+      
         <div className="container px-4 py-4 d-flex justify-content-between align-items-center">
           <Link to="/" className="d-flex align-items-center text-decoration-none">
             <Camera className="text-custom-burgundy me-2" size={24} />
@@ -260,8 +274,8 @@ export default function ClientDashboard() {
             <h1 className="fs-3 fw-bold mb-1">Welcome, {localStorage.getItem("userName") || 'User'}!</h1>
             <p className="text-muted mb-0">Manage your photography bookings and appointments</p>
           </div>
-          <button className="btn btn-custom-burgundy mt-3 mt-md-0">
-            <Calendar size={16} className="me-2" />
+          <button className="btn btn-custom-burgundy mt-3 mt-md-0" onClick={()=>{navigate("/photographer")}}>
+            <Calendar size={16} className="me-2 o" />
             Book New Session
           </button>
         </div>
@@ -348,7 +362,7 @@ export default function ClientDashboard() {
                               }`}>
                               {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
                             </span>
-                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.id}</p>
+                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.bookingCode}</p>
                           </div>
                           <div className="mt-3 mt-md-0">
                             <h4 className="fw-bold text-custom-burgundy">{booking.price}</h4>
@@ -394,13 +408,16 @@ export default function ClientDashboard() {
                             </div>
                             <div className="d-flex flex-column gap-2">
                               {booking.status === "confirmed" && (
-                                <button className="btn btn-custom-burgundy">
-                                  Complete Payment
+                                <button
+                                  className="btn btn-custom-burgundy"
+                                  onClick={() => handlePaymentClick(booking, 'remaining')}
+                                >
+                                  Make Payment
                                 </button>
                               )}
                               <button
                                 className="btn btn-outline-secondary"
-                                onClick={() => handleMessagePhotographer(booking)}
+                                onClick={() => handleMessagePhotographer(booking.photographerDetails, booking,booking.bookingCode)}
                               >
                                 <MessageSquare size={16} className="me-2" />
                                 Message Photographer
@@ -446,7 +463,7 @@ export default function ClientDashboard() {
                             <span className="badge bg-secondary-light text-secondary">
                               Completed
                             </span>
-                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.id}</p>
+                            <p className="text-muted fs-sm mt-3 mb-0">Booking #{booking.bookingCode}</p>
                           </div>
                           <div className="mt-3 mt-md-0">
                             <h4 className="fw-bold text-custom-burgundy">{booking.price}</h4>
@@ -494,6 +511,12 @@ export default function ClientDashboard() {
                               <button className="btn btn-custom-burgundy">
                                 <Download size={16} className="me-2" />
                                 Download Photos
+                              </button>
+                              <button
+                                className="btn btn-custom-burgundy"
+                                onClick={() => handlePaymentClick(booking, 'remaining')}
+                              >
+                                Remaining Payment
                               </button>
                               {!booking.rating && (
                                 <button className="btn btn-outline-secondary">
@@ -610,7 +633,7 @@ export default function ClientDashboard() {
           recipientToken={photographer.token}
           recipientName={photographer.name}
           recipientRole={photographer.role}
-          bookingId={currentBooking?.id || "booking123"}
+          bookingId={currentBookingId || "booking123"}
           booking={currentBooking} // ← Add this
         />
       )}

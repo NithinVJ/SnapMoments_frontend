@@ -16,12 +16,13 @@ function EventDetails({ bookingData, updateBookingData }) {
             required
           >
             <option value="">Select event type</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Engagement">Engagement</option>
-            <option value="Portrait">Portrait</option>
-            <option value="Family">Family</option>
-            <option value="Corporate">Corporate</option>
-            <option value="Other">Other</option>
+            <option value="Wedding Photography">Wedding Photography</option>
+            <option value="Engagement Photography">Engagement Photography</option>
+            <option value="Portrait Photography">Portrait Photography</option>
+            <option value="Family Photography">Family Photography</option>
+            <option value="Event Photography">Event Photography</option>
+            <option value="Nature Photography">Nature Photography</option>
+            <option value="Wildlife Photography">Wildlife Photography</option>
           </Form.Select>
         </Form.Group>
 

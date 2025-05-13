@@ -189,28 +189,20 @@ const ChatModal = ({
                                     No messages yet. Start the conversation!
                                 </div>
                             ) : (
-                                messages.map((message) => (
-                                    <div
-                                        key={message.id}
-                                        className={`mb-3 d-flex ${
-                                            message.senderToken === currentUserToken
-                                                ? 'justify-content-end'
-                                                : 'justify-content-start'
-                                        }`}
-                                    >
+                                messages.map((message) => {
+                                    const isCurrentUser = message.senderToken === currentUserToken;
+                                    const isClient = message.senderRole === 'client';
+                                    const bubbleClass = isClient ? 'client' : 'photographer';
+
+                                    return (
                                         <div
-                                            className={`p-3 rounded-3 ${
-                                                message.senderToken === currentUserToken
-                                                    ? 'bg-primary text-white'
-                                                    : 'bg-light'
-                                            }`}
-                                            style={{ maxWidth: '70%' }}
-                                        >
-                                            <div className="fw-bold mb-1">
-                                                {message.senderName}
-                                            </div>
+                                        key={message.id}
+                                        className={`mb-3 d-flex ${isCurrentUser ? 'justify-content-end' : 'justify-content-start'}`}
+                                    >
+                                        <div className={`chat-bubble ${bubbleClass}`}>
+                                            <div className="fw-bold mb-1">{message.senderName} ({message.senderRole})</div>
                                             <div>{message.content}</div>
-                                            <div className="text-end small mt-1">
+                                            <div className="chat-meta">
                                                 {new Date(message.timestamp).toLocaleString([], {
                                                     dateStyle: 'medium',
                                                     timeStyle: 'short'
@@ -218,7 +210,10 @@ const ChatModal = ({
                                             </div>
                                         </div>
                                     </div>
-                                ))
+                                    
+                                    );
+                                })
+
                             )}
                             <div ref={messagesEndRef} />
                         </div>

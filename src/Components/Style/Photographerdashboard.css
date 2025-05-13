@@ -170,5 +170,3 @@
 .notification-dropdown {
   z-index: 1050 !important; /* Higher than Bootstrap's modal z-index (1040) */
 }
-
-/* Ensure other elements don't interfere */

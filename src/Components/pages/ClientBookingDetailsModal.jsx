@@ -8,6 +8,15 @@ import {
 const ClientBookingDetailsModal = ({ show, onHide, booking }) => {
   if (!booking) return null;
 
+  const handlePaymentClick = (booking, paymentType) => {
+    // Navigate to payment page with booking details and payment type
+    navigate(`/dashboard/payment`, {
+      state: {
+        booking,
+        paymentType // 'advance' or 'remaining'
+      }
+    });
+  };
   return (
     <Modal show={show} onHide={onHide} centered size="lg">
       <Modal.Header closeButton className="border-0 pb-0">
@@ -104,7 +113,7 @@ const ClientBookingDetailsModal = ({ show, onHide, booking }) => {
                   </button>
                   {booking.status === "confirmed" && (
                     <button className="btn btn-outline-secondary w-100">
-                      <CreditCard size={16} className="me-2" />
+                      <CreditCard size={16} className="me-2" onClick={() => handlePaymentClick(booking, 'remaining')} />
                       Make Payment
                     </button>
                   )}
